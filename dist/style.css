@@ -15,10 +15,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5px;
-    margin: 5px;
-    padding: 5px;
-    justify-self: start;
-    align-self: baseline;
+    padding: 15px;
+    margin: 10px;
+    align-items: start;
+    
 }
 
 .card {
@@ -47,11 +47,13 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3px;
+    justify-content: start;
 }
 
 li {
     display: grid;
     padding: 2px;
+    margin-right: 5px;
     
 }
 
