@@ -11,12 +11,14 @@ router.get('/recipes/:ingredient', function (req, res) {
     request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function(err, response) {
         let recipes = JSON.parse(response.body).results 
         let recipeRelevantInfo = []
-        for(let recipe of recipes) {
+        for(let recipe in recipes) {
+            let theRecipe = recipes[recipe]
             let newRecipe = {
-                title: recipe.title,
-                ingredients: recipe.ingredients,
-                video: recipe.href,
-                img: recipe.thumbnail
+                title: theRecipe.title,
+                ingredients: theRecipe.ingredients,
+                video: theRecipe.href || "",
+                img: theRecipe.thumbnail,
+                id: recipe
             }
             recipeRelevantInfo.push(newRecipe)
         }

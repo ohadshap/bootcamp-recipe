@@ -14,14 +14,31 @@
             <button id="search">Search Recipes</button>
         </div>
 
-        <div id="content">
+        <div id="content"></div>
 
-        </div>
     </div>
 
+    <script id="recipe-template" type="text/x-handlebars-template">
+            
+    
+            <div class="card" data-id="{{id}}">
+                <a href="{{video}}">{{title}}</a>
+                <img src="{{img}}" alt="a picture of {{title}}">
+                <h3>Ingredients : </h3>
+                <div class="ingre">
+                    <ul>
+                        {{#each ingredients}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        
+            
+    </script>
 
     <script src="./jquery/dist/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>    
+    <script src="./handlebars/dist/handlebars.js"></script>    
     <script src="Renderer.js"></script>
     <script src="main.js"></script>
 </body>
